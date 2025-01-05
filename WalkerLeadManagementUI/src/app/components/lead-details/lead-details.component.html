@@ -1,0 +1,22 @@
+<h1>Lead Details</h1>
+
+@if (loading) {
+  <div>Loading lead details...</div>
+}
+
+@if (error) {
+  <div>{{ error }}</div>
+}
+
+@if (!loading && lead) {
+  <div>
+    <p><strong>Name:</strong> {{ lead.name }}</p>
+    <p><strong>Phone Number:</strong> {{ lead.phoneNumber }}</p>
+    <p><strong>Zip Code:</strong> {{ lead.zipCode }}</p>
+    <p><strong>Email:</strong> {{ lead.email || 'N/A' }}</p>
+    <p><strong>Email Permission:</strong> {{ lead.isEmailPermitted ? 'Yes' : 'No' }}</p>
+    <p><strong>Text Permission:</strong> {{ lead.isTextPermitted ? 'Yes' : 'No' }}</p>
+  </div>
+}
+
+<button (click)="goBack()">Back to Dashboard</button>

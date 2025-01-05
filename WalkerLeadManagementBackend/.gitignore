@@ -1,0 +1,102 @@
+# Visual Studio
+.vs/
+.vscode/
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]pp_Data/
+[Aa]pplicationInsights.config
+*.dbmdl
+*.log
+
+# .NET Core / .NET 5+
+bin/
+obj/
+out/
+publish/
+TestResults/
+*.deps.json
+*.runtimeconfig.json
+
+# NuGet
+*.nupkg
+packages/
+**/project.lock.json
+**/project.fragment.lock.json
+**/assets.json
+# Uncomment if NuGet packages are stored in a custom folder
+# NuGetScratch/
+
+# Entity Framework
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+log/
+error.log
+npm-debug.log
+
+# IDE - Specific files
+*.sln.docstates
+*.userprefs
+*.userosscache
+
+# ASP.NET
+wwwroot/node_modules/
+wwwroot/lib/
+node_modules/
+
+# Rider
+.idea/
+*.sln.iml
+
+# Secrets
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+*.sln.DotSettings.user
+
+# Temporary files
+~$*
+*.tmp
+*.temp
+*.bak
+*.old
+
+# Coverage Output
+coverage/
+*.coveralls.yml
+
+# Docker
+docker-compose.override.yml
+.env
+
+# Others
+*.sw?
+*.orig
+*.rej
+*.class
