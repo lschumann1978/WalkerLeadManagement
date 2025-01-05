@@ -25,7 +25,6 @@ These steps assum Visual Studio Code
 
 - Open the 'WalkerLeadManagement' folder in VS Code
 
-```
 In a terminal window and navigate to the to the backend project folder :
 
 ```
@@ -57,6 +56,8 @@ Then run:
 ```
 
 ng serve --open
+
+```
 
 ```
 
