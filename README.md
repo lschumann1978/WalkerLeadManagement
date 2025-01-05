@@ -18,8 +18,14 @@ These steps assum Visual Studio Code
 - Install the frontend app
   npm install -g @angular/cli
 
-When finished open the Backend project and run:
-dotnet run
+#### When finished open the Backend project and run:
 
-Then open the Frontend project and run:
-ng serve --open
+```dotnet run
+
+```
+
+#### Then open the Frontend project and run:
+
+```ng serve --open
+
+```
