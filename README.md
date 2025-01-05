@@ -23,9 +23,9 @@ These steps assum Visual Studio Code
 
 ### When finished seting up the projects
 
-#### Open the 'WalkerLeadManagement' folder in VS Code
+#### Open the 'WalkerLeadManagement' project
 
-In a terminal window and navigate to the to the backend project folder :
+In a terminal window navigate to the backend project folder:
 
 ```
 cd WalkerLeadManagementBackend
@@ -39,11 +39,10 @@ dotnet run
 
 ### Then open the Frontend project
 
-In VS Code, open a terminal window and navigate to the project folder:
+In a terminal window navigate to the frontend project folder:
 
 ```
     cd WalkerLeadManagementUI
-
 ```
 
 Then run:
