@@ -35,3 +35,9 @@ Before setting up the project, ensure you have the following tools installed on 
 
 - Angular CLI: Install globally using npm:  
    npm install -g @angular/cli
+
+When finished open the Backend project and run:
+dotnet run
+
+Then open the Frontend project and run:
+ng serve --open
