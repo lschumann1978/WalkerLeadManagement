@@ -20,12 +20,11 @@ These steps assum Visual Studio Code
 
 #### When finished open the Backend project and run:
 
-```dotnet run
-
 ```
+dotnet run
 
 #### Then open the Frontend project and run:
 
-```ng serve --open
-
 ```
+
+ng serve --open
