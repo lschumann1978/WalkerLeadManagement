@@ -16,7 +16,10 @@ These steps assum Visual Studio Code
 - Download and install from [nodejs.org](https://nodejs.org/) if it's not already installed.
 
 - Install the frontend app
+
+```
   npm install -g @angular/cli
+```
 
 #### When finished open the Backend project and run:
 
