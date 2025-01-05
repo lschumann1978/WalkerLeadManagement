@@ -11,7 +11,7 @@ These steps assum Visual Studio Code
 - Code Editor: Install Visual Studio Code from [code.visualstudio.com](https://code.visualstudio.com/).
   - Install the C# Dev Kit extension for better backend development support.
 
-### Frontend Requirements (Angular)
+### For the frontend project
 
 - Download and install from [nodejs.org](https://nodejs.org/) if it's not already installed.
 
