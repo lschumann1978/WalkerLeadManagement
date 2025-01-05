@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-These steps assum Visual Studio Code
+These steps assume you have Visual Studio Code
 
 ### For the backend project
 
