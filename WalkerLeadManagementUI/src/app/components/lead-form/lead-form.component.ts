@@ -22,7 +22,13 @@ export class LeadFormComponent {
     console.log('LeadFormComponent Loaded');
     this.leadForm = this.fb.group({
       name: ['', Validators.required],
-      phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+      phoneNumber: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^\(\d{3}\) \d{3}-\d{4}$/)
+        ]
+      ],
       zipCode: ['', Validators.required],
       email: ['', [Validators.email]],
       isEmailPermitted: [false],
@@ -34,7 +40,13 @@ export class LeadFormComponent {
     if (this.leadForm.valid) {
       this.leadService.createLead(this.leadForm.value).subscribe({
         next: () => {
-          alert('Lead added successfully!');
+          if (this.leadForm.value.isEmailPermitted) {
+            alert(`Lead added successfully! An email will be sent to the lead having the email address provided.`);
+          } else if (this.leadForm.value.isTextPermitted) {
+            alert(`Lead added successfully! An email will be sent to the lead having the phone number provided.`);
+          } else {
+            alert('Lead added successfully!');
+          }
           this.router.navigate(['/']);
         },
         error: () => {
@@ -46,5 +58,33 @@ export class LeadFormComponent {
 
   onCancel() {
     this.router.navigate(['/']);
+  }
+
+  formatPhoneNumber(event: Event) {
+    const input = event.target as HTMLInputElement;
+    let digits = input.value.replace(/\D/g, '');
+  
+    // Limit to 10 digits
+    digits = digits.substring(0, 10);
+  
+    // Format the digits
+    if (digits.length <= 3) {
+      this.leadForm.patchValue({ phoneNumber: `(${digits}` });
+    } else if (digits.length <= 6) {
+      this.leadForm.patchValue({ phoneNumber: `(${digits.substring(0, 3)}) ${digits.substring(3)}` });
+    } else {
+      this.leadForm.patchValue({
+        phoneNumber: `(${digits.substring(0, 3)}) ${digits.substring(3, 6)}-${digits.substring(6)}`
+      });
+    }
+    
+    // Update the input value directly
+    input.value = this.leadForm.value.phoneNumber;
+  }
+  
+
+  isPhoneNumberInvalid(): boolean {
+    const control = this.leadForm.get('phoneNumber');
+    return control?.invalid && control?.touched || false;
   }
 }

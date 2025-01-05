@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LeadService } from '../../services/lead.service';
 import { Lead } from '../../models/lead.model';
+import { PhoneNumberPipe } from '../../pipes/phone-number.pipe';
 
 @Component({
   selector: 'app-lead-details',
   standalone: true,
   templateUrl: './lead-details.component.html',
   styleUrls: ['./lead-details.component.scss'],
+  imports: [PhoneNumberPipe]
 })
 export class LeadDetailsComponent implements OnInit {
   lead: Lead | null = null;

@@ -11,7 +11,7 @@
 @if (!loading && lead) {
   <div>
     <p><strong>Name:</strong> {{ lead.name }}</p>
-    <p><strong>Phone Number:</strong> {{ lead.phoneNumber }}</p>
+    <p><strong>Phone Number:</strong> {{ lead.phoneNumber | phoneNumber }}</p>
     <p><strong>Zip Code:</strong> {{ lead.zipCode }}</p>
     <p><strong>Email:</strong> {{ lead.email || 'N/A' }}</p>
     <p><strong>Email Permission:</strong> {{ lead.isEmailPermitted ? 'Yes' : 'No' }}</p>

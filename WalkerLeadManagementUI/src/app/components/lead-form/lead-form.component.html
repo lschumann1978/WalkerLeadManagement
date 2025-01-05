@@ -11,7 +11,13 @@
 
   <div>
     <label for="phoneNumber">Phone Number:</label>
-    <input id="phoneNumber" formControlName="phoneNumber" />
+    <input
+      id="phoneNumber"
+      formControlName="phoneNumber"
+      (input)="formatPhoneNumber($event)"
+      maxlength="14"
+      placeholder="(###) ###-####"
+    />
     @if (leadForm.get('phoneNumber')?.invalid && leadForm.get('phoneNumber')?.touched) {
       <small>Phone number must be 10 digits.</small>
     }
