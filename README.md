@@ -21,13 +21,29 @@ These steps assum Visual Studio Code
   npm install -g @angular/cli
 ```
 
-#### When finished open the Backend project and run:
+#### When finished open the Backend project,
+
+In VS Code, open a terminal window and navigate to the project folder:
+
+```
+cd WalkerLeadManagementBackend
+```
+
+Then run:
 
 ```
 dotnet run
 ```
 
-#### Then open the Frontend project and run:
+#### Then open the Frontend project
+
+In VS Code, open a terminal window and navigate to the project folder:
+
+```
+cd WalkerLeadManagementUI
+```
+
+Then run:
 
 ```
 ng serve --open

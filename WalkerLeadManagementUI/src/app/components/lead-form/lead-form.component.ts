@@ -40,13 +40,16 @@ export class LeadFormComponent {
     if (this.leadForm.valid) {
       this.leadService.createLead(this.leadForm.value).subscribe({
         next: () => {
-          if (this.leadForm.value.isEmailPermitted) {
-            alert(`Lead added successfully! An email will be sent to the lead having the email address provided.`);
-          } else if (this.leadForm.value.isTextPermitted) {
-            alert(`Lead added successfully! An email will be sent to the lead having the phone number provided.`);
-          } else {
+          if (!this.leadForm.value.isEmailPermitted && !this.leadForm.value.isTextPermitted) {
             alert('Lead added successfully!');
           }
+
+          if (this.leadForm.value.isTextPermitted) {
+            alert(`Lead added successfully! An text will be sent to the lead with the phone number provided.`);
+          } else if (this.leadForm.value.isEmailPermitted) { 
+            alert(`Lead added successfully! An email will be sent to the lead with the address provided.`);
+          }
+
           this.router.navigate(['/']);
         },
         error: () => {
