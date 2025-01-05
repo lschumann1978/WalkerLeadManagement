@@ -22,9 +22,10 @@ These steps assum Visual Studio Code
 
 ```
 dotnet run
+```
 
 #### Then open the Frontend project and run:
 
 ```
-
 ng serve --open
+```
