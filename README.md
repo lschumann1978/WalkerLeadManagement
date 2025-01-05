@@ -23,7 +23,7 @@ These steps assum Visual Studio Code
 
 ### When finished seting up the projects
 
-#### Open the 'WalkerLeadManagement' project
+### Running the 'WalkerLeadManagementBackend' project
 
 In a terminal window navigate to the backend project folder:
 
@@ -37,9 +37,9 @@ Then run:
 dotnet run
 ```
 
-### Then open the Frontend project
+### Running the 'WalkerLeadManagementFrontend' project
 
-In a terminal window navigate to the frontend project folder:
+In a seperate terminal window navigate to the frontend project folder:
 
 ```
     cd WalkerLeadManagementUI
@@ -50,3 +50,14 @@ Then run:
 ```
 ng serve --open
 ```
+
+This should open the browser to the dashboard page
+
+### How to use:
+
+When the page loads you'll see an empty list of Leads and an "Add New Lead" button
+
+- To add new lead, click on the "Add New Lead" button.
+  - This will bring up the new Lead form. Fill it out and click "Save"
+  - This will navigate back to the dashboard and the lead will be displayed there
+  - Do this several times to see more than one lead in the list
