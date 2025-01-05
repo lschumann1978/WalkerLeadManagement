@@ -58,7 +58,3 @@ Then run:
 ng serve --open
 
 ```
-
-```
-
-```
