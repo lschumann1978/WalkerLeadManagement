@@ -61,3 +61,4 @@ When the page loads you'll see an empty list of Leads and an "Add New Lead" butt
   - This will bring up the new Lead form. Fill it out and click "Save"
   - This will navigate back to the dashboard and the lead will be displayed there
   - Do this several times to see more than one lead in the list
+  - Please observe the console of the running backend project when submitting a new ned lead. It will show a message indicating what type of communication has been sent to the lead.
