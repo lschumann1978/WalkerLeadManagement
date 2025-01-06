@@ -25,7 +25,7 @@ export class LeadDashboardComponent implements OnInit {
   loadLeads() {
     this.leadService.getLeads().subscribe({
       next: (data) => {
-        this.leads = data; // TypeScript should now match types
+        this.leads = data;
         this.loading = false;
       },
       error: (error) => {
@@ -38,9 +38,5 @@ export class LeadDashboardComponent implements OnInit {
 
   viewLeadDetails(id: number) {
     this.router.navigate([`/lead/${id}`]);
-  }
-
-  addNewLead() {
-    this.router.navigate(['/lead/new']);
   }
 }
