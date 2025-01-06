@@ -5,11 +5,11 @@ namespace WalkerLeadManagement.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class LeadController : ControllerBase
+    public class LeadsController : ControllerBase
     {
         private readonly LeadContext _context;
 
-        public LeadController(LeadContext context)
+        public LeadsController(LeadContext context)
         {
             _context = context;
         }
@@ -44,16 +44,24 @@ namespace WalkerLeadManagement.Controllers
         /// <summary>
         /// Creates a new lead from data in the request body
         /// </summary>
-        /// <param name="lead"></param>
+        /// <param name="leads"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult CreateLead([FromBody] Lead lead)
+        [Route("add")]
+        public IActionResult AddLeads([FromBody] List<Lead> leads)
         {
-            if (lead == null)
+            if (leads == null || leads.Count == 0)
             {
                 return BadRequest("Lead data is invalid.");
             }
 
+            leads.ForEach(lead => AddLead(lead));
+
+            return CreatedAtAction(nameof(AddLeads), leads);
+        }
+
+        private object AddLead(Lead lead)
+        {
             // Get the next ID
             var lastLead = _context.Leads.OrderByDescending(l => l.Id).FirstOrDefault();
             lead.Id = (lastLead != null) ? lastLead.Id + 1 : 1; // Start from 1 if no leads exist
@@ -71,7 +79,7 @@ namespace WalkerLeadManagement.Controllers
                 Console.WriteLine($"Text sent to {lead.PhoneNumber}: Thank you for your submission.");
             }
 
-            return CreatedAtAction(nameof(GetLead), new { id = lead.Id }, lead);
+            return new { id = lead.Id, lead };
         }
     }
 }

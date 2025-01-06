@@ -1,7 +1,5 @@
 <h1>Lead Dashboard</h1>
 
-<button (click)="addNewLead()">Add New Lead</button>
-
 <!-- Show Loading State -->
 @if (loading) {
   <div>Loading leads...</div>
@@ -42,5 +40,5 @@
 
 <!-- Show Empty State -->
 @if (!loading && leads.length === 0) {
-  <div>No leads available.</div>
+  <div>No leads yet.</div>
 }

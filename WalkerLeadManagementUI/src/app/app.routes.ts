@@ -9,13 +9,6 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'lead/new',
-    loadComponent: () =>
-      import('./components/lead-form/lead-form.component').then(
-        (m) => m.LeadFormComponent
-      ),
-  },
-  {
     path: 'lead/:id',
     loadComponent: () =>
       import('./components/lead-details/lead-details.component').then(

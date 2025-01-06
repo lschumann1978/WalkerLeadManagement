@@ -37,6 +37,38 @@ Then run:
 dotnet run
 ```
 
+Steps to test:
+
+- Got to your browser and navigate to `http://localhost:5010/index.html'. This will open the Swagger page for the API
+- Click the bar that says "POST"
+- Click on "Try it out"
+- Enter several leads using the format shown below, and leave one of the email fields empty
+  - The response should show the leads that have been created along with their new ids.
+  - Look at the console window running the API to see the message indicating an email or text message has been sent for each lead.
+
+```
+[
+  {
+    "id": 0,
+    "name": "A Name",
+    "phoneNumber": "123-45-6789",
+    "zipCode": "55555",
+    "email": "some.email@email.com",
+    "isEmailPermitted": true,
+    "isTextPermitted": false
+  },
+  {
+    "id": 0,
+    "name": "string",
+    "phoneNumber": "987-65-4321",
+    "zipCode": "55556",
+    "email": "",
+    "isEmailPermitted": false,
+    "isTextPermitted": true
+  }
+]
+```
+
 ### Running the 'WalkerLeadManagementFrontend' project
 
 In a seperate terminal window navigate to the frontend project folder:
@@ -55,10 +87,6 @@ This should open the browser to the dashboard page
 
 ### How to use:
 
-When the page loads you'll see an empty list of Leads and an "Add New Lead" button
+When the page loads you'll see an empty list of Leads and the message "No leads yet"
 
-- To add new lead, click on the "Add New Lead" button.
-  - This will bring up the new Lead form. Fill it out and click "Save"
-  - This will navigate back to the dashboard and the lead will be displayed there
-  - Do this several times to see more than one lead in the list
-  - Please observe the console of the running backend project when submitting a new ned lead. It will show a message indicating what type of communication has been sent to the lead.
+- Observe the list of leads you've added through the API, click on each one to view the details

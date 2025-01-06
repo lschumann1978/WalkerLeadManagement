@@ -7,7 +7,7 @@ import { Lead } from '../models/lead.model'; // Adjust path if needed
   providedIn: 'root',
 })
 export class LeadService {
-  private apiUrl = 'http://localhost:5010/api/Lead';
+  private apiUrl = 'http://localhost:5010/api/Leads';
 
   constructor(private http: HttpClient) {}
 
