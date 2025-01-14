@@ -6,5 +6,4 @@ export interface Lead {
     email?: string;
     isEmailPermitted: boolean;
     isTextPermitted: boolean;
-  }
-  
+}
